@@ -1,0 +1,22 @@
+/* --- This is a comment ---*/
+/* ---------------Box Sizing----------------- */
+html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+
+  /* ---------------Global Styles----------------- */
+
+  body{
+    background-color: aqua;
+    font-family: 'Roboto', sans-serif;;
+    }
+    header .primary{
+        background-color: red;
+    }
+
