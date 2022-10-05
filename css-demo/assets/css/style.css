@@ -1,7 +1,8 @@
 /* --- This is a comment ---*/
+/*You can hover over various elements to recall what they do.*/
 /* ---------------Box Sizing----------------- */
 html {
-    box-sizing: border-box;
+    box-sizing: border-box; /*Review border box element and related elements such as margin, padding, etc. Consider the Reading assignment on homepage*/
   }
   *,
   *:before,
@@ -13,10 +14,73 @@ html {
   /* ---------------Global Styles----------------- */
 
   body{
-    background-color: aqua;
     font-family: 'Roboto', sans-serif;;
+    margin:0;/*Sets margin values and creates a box that is away from the edge, equally from all sides.Hover over "margin" for better explanation.*/
     }
     header .primary{
-        background-color: red;
+      background-color: aqua;
+      text-align: center;/*Align text left, center, justified, right (Be sure to check in preview to see if it works.)*/
+      text-shadow: 1px 10px #000000; /*1px is x value and 10px is y value. It moves text shadow 1 px to the side and 10px down*/
+      color:#ffffff;
+      /* Long Form */
+      padding-top: 40px;
+      padding-right: 40px;
+      padding-bottom: 40px;
+      padding-left: 40px;
+      /*Top,Right,Bottom,Left - Have to go clockwise*/
+      padding: 40px,40px,40px,40px;
+      /*Single Value Applies to all sides*/
+      padding: 40px;
+      /*top/bottom | left/right*/
+      padding: 20px 40px;
+      /*You can use either way for padding. Use the one based on how much control you want.*/
+    }
+    header.primary h1{ /*Allows you to target heading 1 ONLY to change visually*/
+      font-size:2.6rem;/*relative m = rem. Is one of the many unit values in CSS and it allows you to set font size in this case*/
+      margin:10px 0;
     }
 
+    header.primary h1 a {/* allows you to target the hyper link in heading 1. Lets u change its visual look. Remember by default hyperlink is underlined. Don't underline (which u can do through the text decoration attribute)*/
+      color: #ffffff;
+      text-decoration:none;
+    }
+    header.primary h2{
+      font-size: 1.6rem;
+      /*Top | Left/Right | Bottom*/
+      margin:0px auto 40px;
+    }
+
+    header.primary nav{ /*targets the nav element in the html document.*/
+      background:red;
+      width:80vw;/*Another unit value in CSS. vw = view port. This says that the width of the nav element is set to 80% of the view port. */
+      max-width: 900px; /*Max width says never get bigger than the set value, which in this case is 900px*/
+      margin:20px auto; /*auto keyword keeps the magin at 20px on left and right and keeps it that way regardless of u zoom in or zoom out.*/
+    }
+
+    header.primary nav ul{ /*targets the ul or unordered list in the nav element.*/
+      padding:0;
+      display:flex; /*Makes the nav ul from a displayed vertial list to a displayed horizontal list. Check out CSS tricks website for more info regarding flex attribute */ 
+      flex-direction: row; /*Makes it each individual list element a row. Row reverse value will change the order of the list when displayed. So the last list elment will be displayed first. Backwards to forwads list elements will be displayed.*/
+      justify-content: space-evenly; /*Spaces out the individual elements in the list.*/
+
+    }
+    header.primary nav ul li {/*targets the li or list item in the ul or unordered list which is in the nav element.*/
+      list-style-type: none;/*Can use to change the bullets in the bulleted list to different character such as a different images like letter or number or even emojis.*/
+    }
+
+    header.primary ul li a{
+      color:#ffffff;
+      text-decoration: none;
+      background-color: #000000;
+      background-color: rgba(0,0,0,.5); /*rgba vaule for black is 0,0,0,.5. Just another way to set the color of the row containing the individual list elements. */
+      padding: 8px 16px;
+      border-radius: 20px; /*Softens the borders of the rows. Can add more values and put a differnt value for each row.  */
+      transition:2.5s; /*Takes 2.5 seconds to glow up when user hovers over one of the rows' containing individual list elements.*/
+      border: 1px dashed rgba(0,0,0,.5); /*Changes border to dotted border, dashed border. Px value sets thickness and rgba value sets color.*/
+      
+    }
+
+    header.primary ul li a:hover, header.primary ul li a:active{
+      background-color: rgba(0,0,0,.8); /*When user hovers over row elements then this rgba value overides the previous rgba value and darkens that element when user hovers over the row element. Make sure to put the transition attribute in header.primary ul li a , so that it applies to the bottom code as well. */
+      
+    }
