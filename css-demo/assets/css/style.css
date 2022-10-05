@@ -59,7 +59,7 @@ html {
 
     header.primary nav ul{ /*targets the ul or unordered list in the nav element.*/
       padding:0;
-      display:flex; /*Makes the nav ul from a displayed vertial list to a displayed horizontal list. Check out CSS tricks website for more info regarding flex attribute */ 
+      display:flex; /*Makes the nav ul from a displayed vertial list to a displayed horizontal list. Check out CSS tricks website (https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for more info regarding flex attribute */ 
       flex-direction: row; /*Makes it each individual list element a row. Row reverse value will change the order of the list when displayed. So the last list elment will be displayed first. Backwards to forwads list elements will be displayed.*/
       justify-content: space-evenly; /*Spaces out the individual elements in the list.*/
 
