@@ -10,6 +10,18 @@ html {
     box-sizing: inherit;
   }
 
+  /*---------------Utility Classes--------------------*/
+
+  .container{
+    max-width: 960px;
+    width: 80vw;/*Content will fit 80% of the screen but once it hits over 960px then it won't grow beyond that. */
+    margin:40px auto; /*Sets margin of top and bottom at 40px thus keeping it centered. Auto keeps it at 40px centered even if screen is bigger or smaller.*/
+  }
+
+  /*----------------Responsive images-----------------*/
+  img{
+    max-width:100%; /*Makes sure that images width does not exceed its parent*/
+  }
 
   /* ---------------Global Styles----------------- */
 
@@ -17,10 +29,10 @@ html {
     font-family: 'Roboto', sans-serif;;
     margin:0;/*Sets margin values and creates a box that is away from the edge, equally from all sides.Hover over "margin" for better explanation.*/
     }
-    header .primary{
+    header.primary{
       background-color: aqua;
       text-align: center;/*Align text left, center, justified, right (Be sure to check in preview to see if it works.)*/
-      text-shadow: 1px 10px #000000; /*1px is x value and 10px is y value. It moves text shadow 1 px to the side and 10px down*/
+      text-shadow: 1px 1px #000000; /*1px is x value and 10px is y value. It moves text shadow 1 px to the side and 10px down*/
       color:#ffffff;
       /* Long Form */
       padding-top: 40px;
@@ -37,7 +49,7 @@ html {
     }
     header.primary h1{ /*Allows you to target heading 1 ONLY to change visually*/
       font-size:2.6rem;/*relative m = rem. Is one of the many unit values in CSS and it allows you to set font size in this case*/
-      margin:10px 0;
+      margin:10px 0 20px;
     }
 
     header.primary h1 a {/* allows you to target the hyper link in heading 1. Lets u change its visual look. Remember by default hyperlink is underlined. Don't underline (which u can do through the text decoration attribute)*/
@@ -84,3 +96,41 @@ html {
       background-color: rgba(0,0,0,.8); /*When user hovers over row elements then this rgba value overides the previous rgba value and darkens that element when user hovers over the row element. Make sure to put the transition attribute in header.primary ul li a , so that it applies to the bottom code as well. */
       
     }
+
+    #intro h2{/*targetted id intro element in h2. Can do this pound # method because this id element has unique identifier of intro*/
+      color:aqua;
+      border-bottom: 1px dotted #c0c0c0;
+    }
+     
+    #content{
+      display:flex;
+      flex-direction:row;
+      justify-content:space-evenly;
+
+    }
+
+   #content article.post{/*Will select all articles with the class of post. */
+    width:30%;
+    box-shadow:0 4px 8px rgba(0,0,0,.4);
+    padding:10px;
+    border-radius:4px;
+    font-size:.8rem;
+   }
+   #content article.post:hover{ /*When you hover over the content article.post element, it will display a box shadow with as listed color and dimensions(px).*/
+    box-shadow:0 8px 16px rgba(0,0,0,.3);
+   }
+
+    /*------------------------------------Media Queries--------------------------------------------------------*/
+
+    @media screen and (max-width:650px) /* Helps preserve elements size display when webpage is opened in a smaller screen such as phone. No semicolon required at the end.Need to test using the preview to figure out what you max width is. You need to mess with it, to see how you want your webpage to display on a smaller screen versus larger screens.*/{
+      header.primary nav ul{
+        flex-direction: column;/*Displays the unordered list as a column instead of row when screen width is max-width is 650px*/
+      }
+      header.primary nav ul li a{
+        display:block;/*Displays nav ul li a links as block element*/
+      }
+      header.primary nav li{
+        margin-bottom:10px; /*Puts margins on the nav list elements*/
+      }
+      }
+
