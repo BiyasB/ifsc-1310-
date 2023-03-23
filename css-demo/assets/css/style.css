@@ -26,13 +26,21 @@ html {
   }/*Based on max width of container which is 960px, be sure to only load in images within the set px value.*/
 
   /* ---------------Global Styles----------------- */
-
+  
   body{
     font-family: 'Roboto', sans-serif;;
     margin:0;/*Basically space around the outside. Sets margin values and creates a box that is away from the edge, equally from all sides.Hover over "margin" for better explanation.*/
     }
     header.primary{/*target header element with a class of primary, hence period is used. IF there was a space before the period then it would mean target an element with a class of primary inside the header element.  */
       background-color: aqua;
+
+      /*Visit (https://heropatterns.com/) to add background patterns like below two lines (line 39 & 40)
+       Delete or comment out line 39 to preserve orginal background color choice*/
+      /*background-color: #DFDBE5;*/
+      /*For background-image change known elements like fill opacity value or fill which has %23 in front which is just character encoding for # sign and the rest values are hexidecimal values for colors.*/
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%239C92AC' fill-opacity='0.2' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E");
+
+
       text-align: center;/*Align text left, center, justified, right (Be sure to check in preview to see if it works.)*/
       text-shadow: 1px 1px #000000; /*1px is x value and 10px is y value. It moves text shadow 1 px to the side and 10px down. Can also put in another pixel value after 10px, new px value will move shadow up. The third one in the list is color of the text shadow.*/
       color:#ffffff; /*Changes color of the text, not the hyperlinks which have a specfic style that has not been overriden by CSS yet!*/
@@ -65,7 +73,7 @@ html {
     }
 
     header.primary nav{ /*targets the nav element in the html document.*/
-      background:red;
+      background:aquamarine;
       width:80vw;/*Another unit value in CSS. vw = view port. This says that the width of the nav element is set to 80% of the view port. */
       max-width: 900px; /*Max width says never get bigger than the set value, which in this case is 900px*/
       margin:20px auto; /*auto keyword keeps the magin at 20px on left and right and keeps it that way regardless of u zoom in or zoom out.*/
@@ -109,7 +117,11 @@ html {
       display:flex;/*need display flex, flex direction and justify content to use flex box to position elements. Images may be non flexible!*/
       flex-direction:row;/*Lines 22 to 26 makes images responsive to the flex box*/
       justify-content:space-evenly;
-
+      border-bottom: 1px dotted #000000;/*border-bottom and padding offsets the content block (containing img and captions)from the sidebar element below it.*/
+      padding: 2.8rem 0;/*Visually eye ball the value so there is equal space towards bottom&top of the content block */
+      border-top: 1px dotted #000000;
+      /*padding-top: 2.8rem;*//*Can declare padding top&bottom separately or make one solor padding property and add a single value for top&bottom and another value for left&right. Like did above.*/
+      /*padding-bottom:2.8rem;*/
     }
 
    #content article.post{/*Will select all articles with the class of post and use the id content or #content for more specificity.NO SPACE BEFORE! */
@@ -117,13 +129,119 @@ html {
     box-shadow:0 4px 8px rgba(0,0,0,.4);/*Last rgba value is opacity value. Box shadow puts a shadow around box element*/
     padding:10px;/*Adds space to the inside of box element*/
     border-radius:4px;/*Rounds out the edge of box element*/
-    font-size:.8rem;/*Sets the font size for the box element*/
+    font: size 0.7rem;/*Sets the font size for the box element*/
    }
    #content article.post:hover{ /*When you hover over the content article.post element, it will display a box shadow with as listed color and dimensions(px).*/
     box-shadow:0 8px 16px rgba(0,0,0,.3);
    }
 
-    /*------------------------------------Media Queries--------------------------------------------------------*/
+
+/*Use .post-date not # post-date cause post-date is not an id like content is. (.post-date) can only be used if it wasn't used in other context.*/
+/*Add specificity before (.post-date) to better target it. Can do time.post-date (targets post-date in the class) 
+or content.post-date (targets post-date in the id content) or article time.post-date (targets post date in article and time class.) 
+These are varying levels of specificity that targets the same attribute of (post-date). */
+
+/*can put comma and write figcaption to also target the image caption and apply the same code as time.post-date.Same goes for footer.post-meta*/
+
+time.post-date, figcaption, footer.post-meta{
+  text-transform:uppercase; /*Other attributes include uppercase, lowercase, capitalize(will capitalize the first letter of every word). */
+  color:#c0c0c0;
+  font-size: .6rem;
+}
+
+/*targetting figures inside an element class of post. (figure) contains image and caption and has comes with a preset default margin which you
+can overide by setting your own margin to make the figure and captions more appealing on the webpage. Adding margin value opens up space outside
+the element.*/
+
+.post figure{
+margin:0;
+}
+
+/*Targets specifically the images within the figure element that is under post.*/
+.post figure img{
+border: 3px double #c0c0c0;/*border has 3 values which are dimensions, stroke (like solid,double, dotted, dashed, etc.) and color*/
+padding:4px;/*Frames up the image by adding space to the inside using padding property*/
+background:black;/*Can use background to color the padding as there is no padding color property. Can later increase thickness of (border) to add a double frame.*/
+border-radius: 4px;/*Round out the border to soften the corners*/
+}
+
+/*Target hyperlinks using the tag a and the hyperlinks are under post element class*/
+
+.post a{
+color: #3b638b;
+}
+
+/*For hyperlinks to lose the underline when an user hovers over them or the link is active*/
+
+.post a:hover,.post a:active{
+text-decoration: none;
+}
+
+/*Target the sidebar content. To do so use an attribute selector */
+/*This is what attribute selector looks like, includes section name and then the exact attribute name with brackets.*/
+
+aside[role="complementary"]{
+background-color: #00d5ff;
+color:white;
+padding:1.4rem;
+}  
+
+/*Set up flex container which contains all the flex items. use aside .container to target all the flex items within the aside container.
+aside contains sidebar items. */
+
+aside .container{ /*Be sure to put space in between aside and .container cause container is inside aside and that is what we are targetting.*/
+  display:flex;
+  justify-content:space-between;
+  flex-direction: row;/*flex-direction options: row, row-reverse, column, column-reverse*/
+}
+
+/*To target the flex item you can say aside .container .widget (make sure to put spaces since container inside aside and widget inside container)*/
+
+aside article.widget { /*Can also say this to target just the flex item or just the one sidebar column*/
+width:45%; 
+}
+
+/*To target the Read More hyperlink within the sidebar use a for the hyperlink and aside article.widget to specify which hyperlink. */
+aside article.widget a:last-of-type{ /*Use last-of-type to specifically target the bottom hyperlink in case there are hyperlinks before that. There is also firt-of-type to select the first hyperlink if used in this case.*/
+  color:#ffffff;
+  display:block;/*hyperlinks are by default an inline element so you should change it to block to give it its own line!*/
+  margin-top: 20px;/*Set margin top to make some space between hyperlink and above paragraph*/
+  text-align: right;/*Right align text for aesthetic and organization purposes. */
+  }
+
+  aside article.widget a{
+    color:white; 
+  }
+
+aside article footer {/*To target the footer which is labeled as widget footer in html and it doesn't have any text hence not required */
+  display: none;/*To stip the widget footers away. (none) property visually doesn't display the footer. Also prevents screen readers from reading the content. Good for hiding mistakes or if there is an obsolete element that may not be required then you can hide it away*/
+}
+
+
+/*(aside article.widget h2) will target the heading text of the sidebar*/
+
+#colophon{ /*Unique ID hence can use hashtag to target it*/
+  background-color: aqua;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%239C92AC' fill-opacity='0.2' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E");
+
+}
+
+#colophon h6{ /*Targets the last heading space containing your name and 2022. Padding and margin increases the space within and around the element.*/
+  padding:20px;
+  margin:0;
+  color:white;
+  text-align: center;
+  font-size: .9rem;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+    /*------------------------------------Media Queries (KEEP AT BOTTOM)--------------------------------------------------------*/
 
     @media screen and (max-width:650px){ /* Helps preserve elements size display when webpage is opened in a smaller screen such as phone. No semicolon required at the end.Need to test using the preview to figure out what you max width is. You need to mess with it, to see how you want your webpage to display on a smaller screen versus larger screens.Media attribute can be screen, or print or all. Print media is rarely used and all media can be used to target all types of media.*/
       header.primary nav ul{
