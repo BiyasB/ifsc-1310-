@@ -2,53 +2,55 @@
 /*You can hover over various elements to recall what they do.*/
 /* ---------------Box Sizing----------------- */
 html {
-    box-sizing: border-box; /*Review border box element and related elements such as margin, padding, etc. Consider the Reading assignment on homepage*/
+    box-sizing: border-box; /*Changes the default property for block elements from content-box to border box (which resizes everything to fit within 220px horizontal by 220px vertical.) Content-box property adds like the margin,border and padding separately thus adding another 70px, total footpring =290px.) Need to know to ensure designed elements which are set to a px value are correctly sized and fitted. Better to set to border box! */
   }
   *,
   *:before,
   *:after {
     box-sizing: inherit;
   }
+/*Can open "inspect" dialong box on actual websites and go to "elements" at the top and then to "computed" to see the box model used on that website. Can help understand and resolve dimensions and sizing issues.  */
+/*The whole html block of code basically changes all block elements' content-box property to border box property. Then you don't have to do any math to figure out all the dimensions. Have it in every CSS style sheet! */
 
   /*---------------Utility Classes--------------------*/
 
-  .container{
+  .container{ /*Target all container classes */
     max-width: 960px;
     width: 80vw;/*Content will fit 80% of the screen but once it hits over 960px then it won't grow beyond that. */
-    margin:40px auto; /*Sets margin of top and bottom at 40px thus keeping it centered. Auto keeps it at 40px centered even if screen is bigger or smaller.*/
+    margin:40px auto; /*Used to center block element. Sets margin of top and bottom at 40px thus keeping it centered. Auto keeps it at 40px centered even if screen is bigger or smaller.*/
   }
 
   /*----------------Responsive images-----------------*/
   img{
-    max-width:100%; /*Makes sure that images width does not exceed its parent*/
-  }
+    max-width:100%; /*Need in every stylesheet. Makes sure that images width does not exceed its parent.Makes images responsive to flexbox in #content or line 108.*/
+  }/*Based on max width of container which is 960px, be sure to only load in images within the set px value.*/
 
   /* ---------------Global Styles----------------- */
 
   body{
     font-family: 'Roboto', sans-serif;;
-    margin:0;/*Sets margin values and creates a box that is away from the edge, equally from all sides.Hover over "margin" for better explanation.*/
+    margin:0;/*Basically space around the outside. Sets margin values and creates a box that is away from the edge, equally from all sides.Hover over "margin" for better explanation.*/
     }
-    header.primary{
+    header.primary{/*target header element with a class of primary, hence period is used. IF there was a space before the period then it would mean target an element with a class of primary inside the header element.  */
       background-color: aqua;
       text-align: center;/*Align text left, center, justified, right (Be sure to check in preview to see if it works.)*/
-      text-shadow: 1px 1px #000000; /*1px is x value and 10px is y value. It moves text shadow 1 px to the side and 10px down*/
-      color:#ffffff;
-      /* Long Form */
-      padding-top: 40px;
+      text-shadow: 1px 1px #000000; /*1px is x value and 10px is y value. It moves text shadow 1 px to the side and 10px down. Can also put in another pixel value after 10px, new px value will move shadow up. The third one in the list is color of the text shadow.*/
+      color:#ffffff; /*Changes color of the text, not the hyperlinks which have a specfic style that has not been overriden by CSS yet!*/
+      /* Long Form - For block level elements like block quote, header, ordered/unordered list, paragraphs, h1-h6, etc */
+      padding-top: 40px;/*Basically space around the inside of an element.*/
       padding-right: 40px;
       padding-bottom: 40px;
       padding-left: 40px;
-      /*Top,Right,Bottom,Left - Have to go clockwise*/
+      /*Top,Right,Bottom,Left - Have to go clockwise. Short Form examples below for setting padding dimension for a single block element.*/
       padding: 40px,40px,40px,40px;
       /*Single Value Applies to all sides*/
       padding: 40px;
       /*top/bottom | left/right*/
-      padding: 20px 40px;
-      /*You can use either way for padding. Use the one based on how much control you want.*/
+      padding: 20px 40px; /*Changes result because last one is overrides, the set padding values above.*/
+      /*You can use either way for padding. Use the one based on how much control you want. All examples of padding do not pile on since they express the same value. Essentially all examples are equal to each other hence no impact on final result. Only showing different ways of writing code for setting padding dimensions.*/
     }
     header.primary h1{ /*Allows you to target heading 1 ONLY to change visually*/
-      font-size:2.6rem;/*relative m = rem. Is one of the many unit values in CSS and it allows you to set font size in this case*/
+      font-size:2.6rem;/*Font size of the root element = rem.Basically the equivalent of the base font size of the document. Default is 16px = 1 rem. Is one of the many unit values in CSS and it allows you to set font size in this case*/
       margin:10px 0 20px;
     }
 
@@ -70,29 +72,30 @@ html {
     }
 
     header.primary nav ul{ /*targets the ul or unordered list in the nav element.*/
-      padding:0;
+      padding:0;/*Helps the bulleted items of the unordered list stay within certain set parameters*/
       display:flex; /*Makes the nav ul from a displayed vertial list to a displayed horizontal list. Check out CSS tricks website (https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for more info regarding flex attribute */ 
       flex-direction: row; /*Makes it each individual list element a row. Row reverse value will change the order of the list when displayed. So the last list elment will be displayed first. Backwards to forwads list elements will be displayed.*/
       justify-content: space-evenly; /*Spaces out the individual elements in the list.*/
 
     }
-    header.primary nav ul li {/*targets the li or list item in the ul or unordered list which is in the nav element.*/
-      list-style-type: none;/*Can use to change the bullets in the bulleted list to different character such as a different images like letter or number or even emojis.*/
+    header.primary nav ul li {/*targets the li or list item in the ul or unordered list as a whole which is in the nav element.*/
+      list-style-type: none;/*none attribute means taking away the bullets. Can use to change the bullets in the bulleted list to different character such as a different images like letter or number or even emojis. Visit website for examples (https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type)*/
     }
 
-    header.primary ul li a{
-      color:#ffffff;
-      text-decoration: none;
-      background-color: #000000;
-      background-color: rgba(0,0,0,.5); /*rgba vaule for black is 0,0,0,.5. Just another way to set the color of the row containing the individual list elements. */
-      padding: 8px 16px;
-      border-radius: 20px; /*Softens the borders of the rows. Can add more values and put a differnt value for each row.  */
-      transition:2.5s; /*Takes 2.5 seconds to glow up when user hovers over one of the rows' containing individual list elements.*/
-      border: 1px dashed rgba(0,0,0,.5); /*Changes border to dotted border, dashed border. Px value sets thickness and rgba value sets color.*/
+    header.primary ul li a{/*Targets each of the list items*/
+      color:#ffffff;/*Sets unordered list's items (aka the hyperlinks) color to white*/
+      text-decoration: none;/*Removes the underline of the hyperlinks or unordered list items*/
+      /*background-color: #000000;/*Sets background color to black of the hyperlinks or unordered list items*/
+      background-color: rgba(0,0,0,.5); /*Last rgba value (.5) is a opacity value, can make color more transparent or opaque. rgba for white is 255, 255, 255. For black it is 0,0,0. rgba is just another way to set the color of the row containing the individual list elements. */
+      padding: 8px 16px;/*Puts a little space around the edges of the unordered list items*/
+      border-radius: 20px; /*Softens or rounds out the corners of the unordered list item. Can add more values and put a differnt value for each corner.  */
+      transition:2.5s; /*Takes 2.5 seconds to glow up when user hovers over one of the hyperlinks or individual list elements.*/
+      border: 1px dashed rgba(0,0,0,.5); /*Px value sets thickness. Changes border to solid, double, dotted border, dashed border. rgba value sets color.*/
       
     }
-
-    header.primary ul li a:hover, header.primary ul li a:active{
+/*Four states of hyperlinks include link, visited, hover, and active or l.v.h.a*/
+    header.primary ul li a:hover,
+     header.primary ul li a:active{
       background-color: rgba(0,0,0,.8); /*When user hovers over row elements then this rgba value overides the previous rgba value and darkens that element when user hovers over the row element. Make sure to put the transition attribute in header.primary ul li a , so that it applies to the bottom code as well. */
       
     }
@@ -102,19 +105,19 @@ html {
       border-bottom: 1px dotted #c0c0c0;
     }
      
-    #content{
-      display:flex;
-      flex-direction:row;
+    #content{/*targetted id content element in h2. Can do this pound # method because this id element has unique identifier of content*/
+      display:flex;/*need display flex, flex direction and justify content to use flex box to position elements. Images may be non flexible!*/
+      flex-direction:row;/*Lines 22 to 26 makes images responsive to the flex box*/
       justify-content:space-evenly;
 
     }
 
-   #content article.post{/*Will select all articles with the class of post. */
+   #content article.post{/*Will select all articles with the class of post and use the id content or #content for more specificity.NO SPACE BEFORE! */
     width:30%;
-    box-shadow:0 4px 8px rgba(0,0,0,.4);
-    padding:10px;
-    border-radius:4px;
-    font-size:.8rem;
+    box-shadow:0 4px 8px rgba(0,0,0,.4);/*Last rgba value is opacity value. Box shadow puts a shadow around box element*/
+    padding:10px;/*Adds space to the inside of box element*/
+    border-radius:4px;/*Rounds out the edge of box element*/
+    font-size:.8rem;/*Sets the font size for the box element*/
    }
    #content article.post:hover{ /*When you hover over the content article.post element, it will display a box shadow with as listed color and dimensions(px).*/
     box-shadow:0 8px 16px rgba(0,0,0,.3);
@@ -122,7 +125,7 @@ html {
 
     /*------------------------------------Media Queries--------------------------------------------------------*/
 
-    @media screen and (max-width:650px) /* Helps preserve elements size display when webpage is opened in a smaller screen such as phone. No semicolon required at the end.Need to test using the preview to figure out what you max width is. You need to mess with it, to see how you want your webpage to display on a smaller screen versus larger screens.*/{
+    @media screen and (max-width:650px){ /* Helps preserve elements size display when webpage is opened in a smaller screen such as phone. No semicolon required at the end.Need to test using the preview to figure out what you max width is. You need to mess with it, to see how you want your webpage to display on a smaller screen versus larger screens.Media attribute can be screen, or print or all. Print media is rarely used and all media can be used to target all types of media.*/
       header.primary nav ul{
         flex-direction: column;/*Displays the unordered list as a column instead of row when screen width is max-width is 650px*/
       }
@@ -130,7 +133,7 @@ html {
         display:block;/*Displays nav ul li a links as block element*/
       }
       header.primary nav li{
-        margin-bottom:10px; /*Puts margins on the nav list elements*/
+        margin-bottom:10px; /*Puts margins on the nav list elements, adds space below the list elements.*/
       }
       }
 
