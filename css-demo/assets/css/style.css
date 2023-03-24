@@ -20,6 +20,42 @@ html {
     margin:40px auto; /*Used to center block element. Sets margin of top and bottom at 40px thus keeping it centered. Auto keeps it at 40px centered even if screen is bigger or smaller.*/
   }
 
+/*Created a class that takes the image and moves it over to the right and allows the content to wrap around to the left. */
+.img-right{ /*Since this class is newly created, it must be added to the html doc in the img src line in between the image address and (alt) class*/
+  float:right;/*moves image to the right*/
+  margin:10px 0 10px 20px; /*margin adds space around the outside of the image and values represent ( top, right, bottom, left ) in order!*/
+  border:5px solid #000000;/*IF were to separate px values for border then values must be represented clockwise or ( top, right, bottom, left ) in order! */
+  padding:5px;/*Can use to frame the image meaning border that doesn't exactly touch the image but surrounds it like a border.*/
+  border-radius:4px;/*Can round out the corners, but may have remove border for it work for the image specifically. Border radius values are represented as (top left), (bottom right). */ 
+  background-color: brown;/*makes it look like it has a double border with different colors*/
+
+}
+
+/*Often times may have to create the inverse of the above code, just to have a different possible way to style the image. Only need to go back
+to html doc and change the class from .img-right to .img-left*/
+.img-left{/*need to change to opposite of above*/
+  float:left;/*need to change to opposite of above*/
+  margin:10px 20px 10px 0px;/*need to change to opposite of above*/
+  border:5px solid #000000;
+  padding:5px;
+  border-radius:4px;
+  background-color: brown;
+}
+
+/*Just another option to consider like above two but the text/content cannot flow on both sides as it won't be readable by screenreaders nor really usable!*/
+.img-center{
+  display:block; /*Diplay property default is inline so need to change to block so that you can later use margin and padding properties.Didn't need above two to be block elements as the text could wrap around the image and hence element needed to stay in default in line state.*/
+  margin:20px,auto;/*top&bottom is 20px and left&right margin will be auto which means automatically adjusted*/
+  border:5px solid #000000;
+  padding:5px;
+  border-radius:4px;
+  background-color: brown;
+}
+
+
+
+
+
   /*----------------Responsive images-----------------*/
   img{
     max-width:100%; /*Need in every stylesheet. Makes sure that images width does not exceed its parent.Makes images responsive to flexbox in #content or line 108.*/
@@ -30,7 +66,8 @@ html {
   body{
     font-family: 'Roboto', sans-serif;;
     margin:0;/*Basically space around the outside. Sets margin values and creates a box that is away from the edge, equally from all sides.Hover over "margin" for better explanation.*/
-    }
+    line-height: 1.4rem;/*Allows you to set the default height of each line. Kinda like line spacing on Word. 20px or 1.4 rem ish is close to the default line height.*/
+  }
     header.primary{/*target header element with a class of primary, hence period is used. IF there was a space before the period then it would mean target an element with a class of primary inside the header element.  */
       background-color: aqua;
 
@@ -177,6 +214,120 @@ color: #3b638b;
 text-decoration: none;
 }
 
+
+/*Add id demo after .post code and before aside code because that is the same placement as the document you are building. 
+Here Used 1st lesson's html and style it with css*/
+
+#demo h2{
+  border-left: 7.5px solid aqua;
+  padding-left:10px;
+}
+
+#demo a{
+  color:rgb(5, 248, 167);
+}
+
+/*Type selector table created to add css to table in html*/
+
+table{/*Properties affect whole table block, outer border mostly in this case*/
+  border: 2px solid #000000;
+  border-collapse: collapse;/*This property is only specifically only for table*/
+  width: 100%;
+}
+
+tr:nth-child(even){/*Properties affect all rows of table. Using nth-child and adding a integer or keywords such as even or odd you can target certain rows within table and add css to them specfically. Visit (https://css-tricks.com/useful-nth-child-recipies/) for more ideas*/
+  background-color: #05f4f8;
+}
+
+
+tr:hover{/*Allows the row to get darker when user hovers over a specfic row*/
+  background-color:rgba(58, 197, 199,.90);
+}
+
+
+
+th{/*Properties affect first row with the column headings*/
+  background-color:rgba(58, 197, 199);
+  color:#ffffff;
+  padding:10px;/*Adding space inside of the first row to let column heading have more room visually*/
+}
+
+td{/*Properties affecct each individual data cell*/
+  border: 1px solid #000000;
+  padding: 5px;/*Adding space inside of each data cell to have more room visually for content in each data cell*/
+  width:33%;/*Makes it table's columns equal*/
+  text-align: right;/*Align data cell data to the right*/
+  
+}
+
+
+td:first-of-type{/*Aligns only first column's data to the left*/
+  text-align: left;
+}
+
+/*Targets ordered list which is under id demo*/
+
+#demo ol{
+  list-style-type: upper-alpha;/*Used to change the values attached to the list items (also called list item attachments).upper-alpha changes values to capital letters.*/
+}
+
+/*Targets unordered list which is under id demo*/
+#demo ul{
+  list-style-type:square;/*list item attachments changed to square*/
+}
+
+/*Targets nested list under the unordered list under id demo. To target lists nested inside other nested lists just add more "ul"*/
+/*Helpful resource (https://caniuse.com/) to confirm if you can use certain properties*/
+
+#demo ul ul{
+  list-style-type:circle;/*list item attachments of nested list under ul changed to circle*/
+  color:crimson;/*only nested list items color changed */
+}
+
+/*Targets description list which is under id demo*/
+
+#demo dl{
+                  
+}
+
+/*Targets the term in the description list which is under id demo*/
+
+#demo dt{
+  font-weight:bold;/*This is how to bold using css. Font-weight property takes values from 100 to 900 and also uses keywords: bold,bolder,lighter*//*Can use google fonts to see how bold text is in a certain font if numerical values were used. */
+}
+
+/*Targets the description in the description list which is under id demo */
+
+#demo dd{
+  margin:0;/*dd Has margin space in front by default can alter by setting margin to 0*/
+}
+
+/*Adjacent sibling combinator. Trying to target dt (term) that is immediately under/followed by a dd (description). To test property you can simply set a color.*/
+
+dd + dt {
+  margin-top: 20px;
+}
+
+
+/*To target the block quote under id demo*/
+
+#demo blockquote{
+  background-color: #01cefc6b;
+  padding: 20px 40px;
+  border: 5px double #079eea;
+  border-radius: 6px;
+}
+
+/*To target the cite under id demo*/
+#demo cite{
+  display: block;
+  font-size: .7rem;
+  text-align: right;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
 /*Target the sidebar content. To do so use an attribute selector */
 /*This is what attribute selector looks like, includes section name and then the exact attribute name with brackets.*/
 
@@ -191,8 +342,9 @@ aside contains sidebar items. */
 
 aside .container{ /*Be sure to put space in between aside and .container cause container is inside aside and that is what we are targetting.*/
   display:flex;
-  justify-content:space-between;
+  justify-content:space-evenly;
   flex-direction: row;/*flex-direction options: row, row-reverse, column, column-reverse*/
+  
 }
 
 /*To target the flex item you can say aside .container .widget (make sure to put spaces since container inside aside and widget inside container)*/
@@ -234,11 +386,6 @@ aside article footer {/*To target the footer which is labeled as widget footer i
   font-size: .9rem;
   text-transform: uppercase;
 }
-
-
-
-
-
 
 
     /*------------------------------------Media Queries (KEEP AT BOTTOM)--------------------------------------------------------*/
