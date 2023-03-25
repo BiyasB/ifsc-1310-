@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Positioning Lab</title>
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-color: #ECECEC;
+	font-weight: bold;
+	font-family: Tahoma, Geneva, sans-serif;
+	color: #FFF;
+	text-align: center;
+	line-height: 24px;
+}
+
+
+#wrapper div{
+  width:125px;
+  height:125px;
+}
+
+
+#wrapper {
+	background-color: #FFF;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#red {
+	background-color: #900;
+  position:absolute;
+  top:0;
+  left:0;
+}
+#green {
+	background-color: #090;
+  	position:absolute;/*With absolute positioning elements can stack on top of each other*/
+  	top:0;
+  	right:0; /*If set to left like red then green will stack on top of red.*/
+	
+  	/*(z-index:) property: Elements start at 0 by default. Can be used to control stacking order.*/
+    
+}
+#blue {
+	background-color: #00F;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+#purple {
+	background-color: #63C;
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+#footer {
+	background-color: #666;
+  margin: 20px auto; /*To center footer set top&bottom margin to 20px and auto for left and right margins.*/
+}
+h1 {
+	color: #000;
+	font-weight: normal;
+	padding: 50px;
+}
+</style>
+</head>
+
+<h1>Absolute 1 Teacher-led:May look different due to size of webpage</h1>
+<div id="wrapper">
+  <div id="red" class="tile">Red</div> 
+  <div id="green" class="tile">Green</div>
+  <div id="blue" class="tile">Blue</div>
+  <div id="purple" class="tile">Purple</div>
+  <div id="footer">Footer</div>
+</div>
+</body>
+</html>
