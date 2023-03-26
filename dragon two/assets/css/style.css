@@ -142,6 +142,8 @@ img {
 
 section#content {
     padding: 4em 0;
+    color: #000000;
+    line-height:30px;/*Helps space out lines - v2*/
   }
   
   section#content h2 {
@@ -177,6 +179,16 @@ section#content {
     margin-bottom: 20px;
   }
 
+  #content summary{ /*v2 changes for faq specfically*/
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: underline;
+  }
+
 
   /* ------------- Articles --------------- */
 
@@ -195,7 +207,7 @@ section#articles {
   
   section#articles h2,
   #content h2 {
-    flex: 0 0 100%; /*Made "Configurations" text span the entire width of the element. Other articles width set to 30% */
+    flex: 0 0 100%; /*Makes "Configurations" text span the entire width of the element. Other articles width set to 30% */
     color: #33536b;
     text-align: center;
     font-family: "Goldman", cursive;
@@ -249,9 +261,12 @@ section#articles {
   
   #articles ul {
     padding: 0 20px;
+    
   }
   #articles li {
     margin-bottom: 20px;
+    line-height: 20px;
+    list-style-type: circle; /*bullets changed to circle v2*/
   }
 
 
